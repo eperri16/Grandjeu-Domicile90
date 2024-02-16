@@ -2,11 +2,15 @@
 
 import "/public/styles/main.scss"
 import DefaultLayout from "../layouts/defaultLayout.astro";
+import GrandJeu from "../components/GrandJeu.astro";
+import Formulaire from "../components/Formulaire.vue"
 
 ---
 
 <DefaultLayout>
-
+<GrandJeu>
+    <Formulaire client:load/>
+</GrandJeu>
 </DefaultLayout>
 
 
