@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/vue": "^4.0.8",
+    "@fontsource-variable/playfair-display": "^5.0.20",
+    "@fontsource/poppins": "^5.0.8",
     "astro": "^4.4.0",
     "sass": "^1.70.0",
     "vue": "^3.4.19"
