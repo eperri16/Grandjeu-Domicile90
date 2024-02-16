@@ -7,18 +7,94 @@
         <ul>
             <li><a>Politique de protection des données</a></li>
             <li><a>Mentions légales</a></li>
-            <li><a>Nous contacter</a></li>
-            <li><a>03 84 28 08 80 | Amaelles</a></li>
+            <li class="Contact"><a>Nous contacter</a></li>
+            <li class="Tel"><a>03 84 28 08 80 | Amaelles</a></li>
         </ul>
-        <ul>
-            <li><a><img src="/public/assets/Facebook.svg"></a></li>
-            <li><a><img src="/public/assets/Instagram.svg"></a></li>
-            <li><a><img src="/public/assets/X.svg"></a></li>
-            <li><a><img src="/public/assets/LinkedIn.svg"></a></li>
+        <ul class="RS">
+            <li><a><img alt="Facebook-logo" src="/public/assets/Facebook.svg"></a></li>
+            <li><a><img alt="Instagram-logo" src="/public/assets/Instagram.svg"></a></li>
+            <li><a><img alt="X-logo" src="/public/assets/X.svg"></a></li>
+            <li><a><img alt="LinkedIn-logo" src="/public/assets/LinkedIn.svg"></a></li>
         </ul>
     </nav>
 </footer>
 
 <style lang="scss">
+  footer {
+    background-color: #343E47;
+    width: 100%;
+    margin-top: 60px;
+  }
 
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  ul {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  a {
+    color: #CCCCCC;
+    font-size: 15px;
+  }
+
+  .RS {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .RS > li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .Contact:before {
+    content: url("../../public/assets/Gmail Logo.svg");
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 80px;
+    transform: scale(1.4);
+    bottom: 7.5px;
+  }
+
+  .Contact {
+    position: relative;
+  }
+
+  .Tel:before {
+    content: url("../../public/assets/Phone.svg");
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 140px;
+    transform: scale(1.2);
+    top: 3px;
+  }
+
+  .Tel {
+    left: 20px;
+    width: 85%;
+    position: relative;
+    display: block;
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: unset;
+    margin-top: 10px;
+  }
+
+  img {
+    transform: scale(1.3);
+  }
 </style>
