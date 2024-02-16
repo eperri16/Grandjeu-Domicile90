@@ -3,19 +3,107 @@
 ---
 
 <header>
-    <nav>
+    <div class="menu-mobile">
         <img src="/public/assets/logo.svg" alt="">
+        <div class="menu-burger"/>
+    </div>
+    <nav>
         <ul>
             <li><a>amaelles<span>.org</span></a></li>
             <li><a>Retrouvez nos offres d'emploi</a></li>
         </ul>
-        <div class="menu-mobile">
-                <div class="burger"/>
-        </div>
     </nav>
 </header>
 
-<style lang="scss">
+<script>
+    const burger = document.querySelector(".menu-burger")
+    const navigation = document.querySelector("nav")
+        burger.addEventListener('click', () => {
+            navigation.classList.toggle("open");
+    });
+</script>
 
+<style lang="scss">
+  @import "/public/styles/variables.scss";
+    header {
+      .menu-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background-color: #FFDB0D;
+        height: min-content;
+        width: 100vw;
+        position: relative;
+        .menu-burger {
+          width: 40px;
+          height: 4px;
+          background-color: black;
+          margin-right: 32px;
+          position: relative;
+          border-radius: 4px;
+          &:before, &:after {
+            content: "";
+            width: 40px;
+            height: 4px;
+            background-color: black;
+            margin-right: 12px;
+            position: absolute;
+            border-radius: 4px;
+          }
+          &:before {
+            top: 10px;
+          }
+          &:after {
+            bottom: 10px;
+          }
+        }
+      }
+      nav {
+        position: absolute;
+        text-align: center;
+        width: 100vw;
+        background-color: #FFDB0DDD;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        z-index: 10;
+        transition: all .3s ease;
+        ul {
+          li {
+            padding: 8px 0;
+            a {
+              font-family: "Playfair Display Variable", serif;
+              font-weight: bold;
+              font-size: 20px;
+              span {
+                font-family: "Playfair Display Variable", serif;
+                color: white;
+              }
+            }
+          }
+          li:not(:last-child) {
+            position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              width: 4px;
+              height: 4px;
+              background-color: black;
+              border-radius: 4px;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+
+  .open {
+    transform: translateY(0) !important;
+  }
 
 </style>
