@@ -23,15 +23,11 @@
         <input type="text" id="phone-number" name="phone-number">
       </div>
       <div class="form-check">
-        <label class="to-check" for="subscribe">En cochant cette case, vous acceptez de recevoir des <strong>offres
-          liés aux
-          services d’Amaelles et aux jobs d’été proposés par l’association.</strong></label>
+        <label class="to-check" for="subscribe">En participant à ce jeu, vous acceptez de recevoir des offres d'emplois d'Amaelles et toutes informations relatives à nos actions de recrutement</label>
         <input type="checkbox" id="subscribe" name="subscribe">
       </div>
       <div class="form-check">
-        <label class="to-check" for="subscribe">En cochant cette case, vous consentez à ce que vos données personnelles soient collectées
-          et utilisées à des fins informatives dans le cadre du jeu concours. Ces données seront conservées pendant une
-          année.*</label>
+        <label class="to-check" for="subscribe">En cochant cette case, vous consentez à ce que vos données personnelles soient collectées et partagées avec les structures membres du collectif Amaelles. Elles seront utilisées à des fins de statistiques et pour les actions menées à des fins de recrutement. Ces données seront conservées pendant deux ans.</label>
         <input type="checkbox" id="subscribe" name="subscribe" required>
       </div>
       <button @click.prevent="">Je participe !</button>
