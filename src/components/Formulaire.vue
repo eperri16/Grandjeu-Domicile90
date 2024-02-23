@@ -36,7 +36,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../../public/styles/variables.scss";
+@import "/public/styles/variables.scss";
 
 .formulaire {
   h3 {

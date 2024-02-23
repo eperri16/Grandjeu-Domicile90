@@ -3,30 +3,44 @@
 ---
 
 <header>
-    <div class="menu-mobile">
-        <img src="/public/assets/logo.svg" alt="">
+    <div class="menu">
+        <img src="/assets/logo.svg" alt="">
         <div class="menu-burger"/>
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="">amaelles<span>.org</span></a></li>
+                <li><a href="">Retrouvez nos offres d'emploi</a></li>
+            </ul>
+        </nav>
     </div>
-    <nav>
+    <nav class="nav-mobile close">
         <ul>
-            <li><a>amaelles<span>.org</span></a></li>
-            <li><a>Retrouvez nos offres d'emploi</a></li>
+            <li><a href="">amaelles<span>.org</span></a></li>
+            <li><a href="">Retrouvez nos offres d'emploi</a></li>
         </ul>
     </nav>
 </header>
 
 <script>
     const burger = document.querySelector(".menu-burger")
-    const navigation = document.querySelector("nav")
+    const navigation = document.querySelector(".nav-mobile")
         burger.addEventListener('click', () => {
-            navigation.classList.toggle("open");
+            navigation.classList.toggle("close");
     });
 </script>
 
 <style lang="scss">
   @import "/public/styles/variables.scss";
     header {
-      .menu-mobile {
+      @media screen and (min-width: $m-screen) {
+        .menu-burger, .nav-mobile {
+          display: none;
+        }
+        .nav-desktop {
+          display: block;
+        }
+      }
+      .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,17 +74,6 @@
         }
       }
       nav {
-        position: absolute;
-        text-align: center;
-        width: 100vw;
-        background-color: #FFDB0DDD;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translateY(-100%);
-        z-index: 10;
-        transition: all .3s ease;
         ul {
           li {
             padding: 8px 0;
@@ -96,14 +99,39 @@
               bottom: 0;
               left: 50%;
               transform: translateX(-50%);
+              @media screen and (min-width: $m-screen) {
+                bottom: 50%;
+                transform: translateY(50%);
+                right: -20%;
+                left: inherit;
+              }
             }
           }
         }
       }
     }
+      .nav-desktop {
+        display: none;
+        margin-right: 40px;
+        ul {
+          display: flex;
+          gap: 40px;
+        }
+      }
+      .nav-mobile {
+        position: absolute;
+        text-align: center;
+        width: 100vw;
+        background-color: #FFDB0DDD;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: all .3s ease;
+    }
 
-  .open {
-    transform: translateY(0) !important;
+  .close {
+    transform: translateY(-100%);
   }
 
 </style>
